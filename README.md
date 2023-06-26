@@ -42,7 +42,7 @@ You'll need a command prompt configured for calling Visual Studio tools. we have
    - OR Search for **x64 Native Tools Command Prompt for VS 2019** in start menu.
    - **Run as an Admin**
 2. Executing the batch file with the configuration
-    - Open the Windows terminal and paste the following command
+    - Open the Windows terminal and paste the following command (Kindly verify the path on your device, you might have *Community* version. In that case replace the *Enterprise* with Your version)
     - **C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat**
 
 ---
