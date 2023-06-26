@@ -33,7 +33,23 @@ If you want to build for **ARM/ARM64**, Select:
 Please go to:
 - **Control Panel → Programs → Programs and Features → Select the most recent Windows Software Development Kit → Change → Change → Select Debugging Tools For Windows → Change.**
 
+## Opening Developer Command Prompt
 
+You'll need a command prompt configured for calling Visual Studio tools. we have 2 ways for that:
+
+1. Using the shortcut in the start menu.
+   - **Start Menu → Visual Studio 2019 → x64 Native Tools Command Prompt for VS 2019**
+   - OR Search for **x64 Native Tools Command Prompt for VS 2019** in start menu.
+   - **Run as an Admin**
+2. Executing the batch file with the configuration
+  - Open the Windows terminal and paste the following command
+  - **C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat**
+
+---
+
+# After setting up the environment now we have to Download the WebRTC Code base
+## Getting depot_tools
+gclient error: solve by adding permission 777
 
 ---
 
