@@ -108,11 +108,48 @@ cd c:\webrtc
 gclient
 ```
 
-2. Request the tools to fetch the WebRTC code base. The following command will take time. Few Hours Maybe, Depending upon network speed.
+2. Request the tools to fetch the WebRTC code base. The following command will take time. **Few Hours** Maybe, Depending upon your network speed, so be Patient :)
 
 ```
 fetch --nohooks webrtc
 ```
+
+3. After successfull cloning for source code. Change to the **branch-heads/4147 branch**. This is the commit that the UWP(Universal Windows Platform) patches (see below) are based on.
+
+```
+cd src
+git checkout branch-heads/4147
+```
+
+4. Instruct the tools to bring the bits from all the sub repositories to your dev box. This may take a while.
+
+```
+gclient sync -D -r branch-heads/4147
+```
+
+## Apply the Patches
+
+The [patchWebRTCM84.cmd](https://github.com/microsoft/winrtc/blob/master/patches_for_WebRTC_org/m84/patchWebRTCM84.cmd) batch file needs to locate the WebRTC code base in order to be patched. 
+
+1. The environment variable **WEBRTCM84_ROOT** should contain the path for the WebRTC code base you've just downloaded.
+
+```
+set WEBRTCM84_ROOT=c:\webrtc\src
+```
+
+2. Now, you just need to run the batch file that will patch all the necessary repos that form the WebRTC code base.
+
+```
+c:\WinRTC\patches_for_WebRTC_org\m84\patchWebRTCM84.cmd
+```
+
+
+
+
+
+
+
+
 
 
 ---
