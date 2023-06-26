@@ -42,14 +42,78 @@ You'll need a command prompt configured for calling Visual Studio tools. we have
    - OR Search for **x64 Native Tools Command Prompt for VS 2019** in start menu.
    - **Run as an Admin**
 2. Executing the batch file with the configuration
-  - Open the Windows terminal and paste the following command
-  - **C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat**
+    - Open the Windows terminal and paste the following command
+    - **C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat**
 
 ---
 
-# After setting up the environment now we have to Download the WebRTC Code base
+# Download the WebRTC Code base
+
+After setting up the environment, now we have to acquire the WebRTC code base.
 ## Getting depot_tools
-gclient error: solve by adding permission 777
+
+WebRTC uses Chromium's build tools named depot_tools. You can download it with curl that is now shipped with Windows. 
+
+1. Download depot_tool.zip to the current folder.
+
+```
+curl https://storage.googleapis.com/chrome-infra/depot_tools.zip --output depot_tools.zip
+```
+
+2. unzip depot_tools in the root folder of the c: drive.
+
+```
+mkdir c:\depot_tools
+tar -xf depot_tools.zip -C c:\depot_tools
+```
+
+3. delete the depot_tools.zip file.
+
+```
+del depot_tools.zip
+```
+
+4. Set the path environment variable to execute commands in the depot_tools folder.
+
+```
+set PATH=c:\depot_tools;%PATH%
+```
+
+5. Let's inform depot_tools that we don't have access to Google's internal tools.
+
+```
+set DEPOT_TOOLS_WIN_TOOLCHAIN=0
+```
+
+6. The GYP build tool must be informed about the version of the Visual Studio we're using.
+
+```
+set GYP_MSVS_VERSION=2019
+```
+
+7. Create the folder where the code base will be placed.
+
+```
+c:
+mkdir c:\webrtc
+cd c:\webrtc
+```
+
+## Downloading the bits
+
+1. Tell to the gclient tool to initialize your local copy of the repos.
+*You might get few errors here, you only need to reset the permission of folder 'webrtc' to 777*
+
+```
+gclient
+```
+
+2. Request the tools to fetch the WebRTC code base. The following command will take time. Few Hours Maybe, Depending upon network speed.
+
+```
+fetch --nohooks webrtc
+```
+
 
 ---
 
