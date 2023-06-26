@@ -143,8 +143,41 @@ set WEBRTCM84_ROOT=c:\webrtc\src
 c:\WinRTC\patches_for_WebRTC_org\m84\patchWebRTCM84.cmd
 ```
 
+---
 
+# Setting up and Building
 
+## Setting up
+
+.
+.
+.
+.
+
+## Building
+
+.
+.
+
+### With Visual Studio 2019
+.
+.
+.
+
+### With command line
+
+.
+.
+.
+
+---
+
+# Using the generated binaries
+
+.
+.
+.
+.
 
 
 
