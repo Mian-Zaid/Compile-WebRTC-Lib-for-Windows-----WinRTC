@@ -60,11 +60,11 @@ WebRTC uses Chromium's build tools named depot_tools. You can download it with c
 curl https://storage.googleapis.com/chrome-infra/depot_tools.zip --output depot_tools.zip
 ```
 
-2. unzip depot_tools in the root folder of the c: drive.
+2. unzip depot_tools in the root folder of the f: drive.
 
 ```
-mkdir c:\depot_tools
-tar -xf depot_tools.zip -C c:\depot_tools
+mkdir f:\depot_tools
+tar -xf depot_tools.zip -C f:\depot_tools
 ```
 
 3. delete the depot_tools.zip file.
@@ -76,7 +76,7 @@ del depot_tools.zip
 4. Set the path environment variable to execute commands in the depot_tools folder.
 
 ```
-set PATH=c:\depot_tools;%PATH%
+set PATH=f:\depot_tools;%PATH%
 ```
 
 5. Let's inform depot_tools that we don't have access to Google's internal tools.
@@ -94,9 +94,9 @@ set GYP_MSVS_VERSION=2019
 7. Create the folder where the code base will be placed.
 
 ```
-c:
-mkdir c:\webrtc
-cd c:\webrtc
+f:
+mkdir f:\webrtc
+cd f:\webrtc
 ```
 
 ## Downloading the bits
@@ -134,13 +134,13 @@ The [patchWebRTCM84.cmd](https://github.com/microsoft/winrtc/blob/master/patches
 1. The environment variable **WEBRTCM84_ROOT** should contain the path for the WebRTC code base you've just downloaded.
 
 ```
-set WEBRTCM84_ROOT=c:\webrtc\src
+set WEBRTCM84_ROOT=f:\webrtc\src
 ```
 
 2. Now, you just need to run the batch file that will patch all the necessary repos that form the WebRTC code base.
 
 ```
-c:\WinRTC\patches_for_WebRTC_org\m84\patchWebRTCM84.cmd
+f:\WinRTC\patches_for_WebRTC_org\m84\patchWebRTCM84.cmd
 ```
 
 ---
